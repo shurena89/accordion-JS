@@ -1,7 +1,11 @@
 body {
-  background-color: gray;
+  background: url("./images/art.jpg") no-repeat center center/cover;
+  height: 100vh;
 }
 
-h1 {
-  color: red;
+.accordion {
+  color: white;
+}
+.accordion .title, .accordion .subtitle {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */
