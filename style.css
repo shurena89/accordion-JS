@@ -1,11 +1,106 @@
 body {
-  background: url("./images/art.jpg") no-repeat center center/cover;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url(./images/campus.jpg) no-repeat center center/cover;
   height: 100vh;
 }
 
-.accordion {
-  color: white;
+header {
+  background-color: #aa3333;
+  padding: 0.4rem;
+  margin-top: 2rem;
 }
-.accordion .title, .accordion .subtitle {
-  display: flex;
+header h1 {
+  color: white;
+  padding-left: 3rem;
+}
+
+.accordion {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  background: #ced1d5;
+  border: solid 1px gray;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  line-height: normal;
+}
+.accordion .content {
+  margin: auto;
+}
+.accordion .question {
+  border-bottom: solid 1px gray;
+  position: relative;
+  cursor: pointer;
+}
+.accordion .question::before {
+  content: "+";
+  position: absolute;
+  left: 20px;
+  color: #aa3333;
+  font-size: 24px;
+}
+.accordion h2 {
+  color: #aa3333;
+  text-align: center;
+}
+.accordion .answer {
+  height: 0px;
+  overflow: hidden;
+  transition: 0.5s;
+  margin: auto;
+}
+.accordion .answer p {
+  color: black;
+  padding-left: 2%;
+}
+
+.accordion .content.active .answer {
+  height: 60px;
+}
+.accordion .content.active .question {
+  transition: 0.5s;
+}
+.accordion .content.active .question::before {
+  content: "-";
+}
+
+@media (max-width: 768px) {
+  header {
+    margin-top: 0.5rem;
+    padding: auto;
+  }
+  header h1 {
+    font-size: 32px;
+  }
+  .accordion {
+    height: auto;
+  }
+}
+@media (max-width: 414px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 375px) {
+  h1 {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 10px;
+  }
 }/*# sourceMappingURL=style.css.map */

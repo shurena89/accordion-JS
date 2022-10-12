@@ -1,13 +1,126 @@
 @import './variables';
 
 body{
-    background: url('./images/art.jpg') no-repeat center center/cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url(./images/campus.jpg) no-repeat center center/cover;
     height: 100vh;
+    
+}
+header{
+    background-color: $brown;
+    padding: 0.4rem;
+    margin-top: 2rem;
+    h1{
+        color: white;
+        padding-left: 3rem;
+    }
 }
 .accordion{
-    color: white;
-    .title, .subtitle{
-        display: flex;
-        
+    
+position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: auto;
+    background: $gray;
+    border: solid 1px $dark;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    line-height: normal;
+   .content {
+    margin: auto;
+   }
+   .question {
+    border-bottom: solid 1px $dark;
+    position: relative;
+    cursor: pointer;
+   }
+   .question::before{
+content: '+';
+position: absolute;
+left: 20px;
+color: $brown;
+font-size: 24px;
+
+   }
+    
+h2{color: $brown;
+
+text-align: center;
+}
+.answer {
+    
+    // height: 0px; as when it closed to not take place
+    // overflow: hidden; to not be seen ugly overflow
+    // transition: .5s; for smooth transition
+
+    height: 0px;
+    overflow: hidden;
+    transition: .5s;
+
+    margin:auto;
+    p {
+            color: black;
+            padding-left: 2%;
+    
+        }
+}
+
+}
+
+// styling for JS
+.accordion .content.active{
+.answer {
+        height: 60px;
+    }
+.question {
+   transition: .5s;
+}
+.question::before{
+    content: '-';
+}
+} 
+
+
+//media query
+
+@media(max-width: 768px){
+    header{
+        margin-top: .5rem;
+        padding: auto;
+        h1 {
+                font-size: 32px;
+            }
+    }
+    .accordion {
+        height:auto;
+    }
+}
+@media(max-width: 414px) {
+    h1 {
+            font-size: 24px;
+        }
+    h2 {
+        font-size: 16px;
+    }
+    p {
+        font-size: 12px;
+    }
+}
+@media(max-width: 375px) {
+    h1 {
+            font-size: 16px;
+        }
+   
+    h2 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 10px;
     }
 }
